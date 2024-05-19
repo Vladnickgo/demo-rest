@@ -51,11 +51,6 @@ public class UserServiceImpl implements UserService {
         return new PageImpl<>(userDtoList, pageable, total);
     }
 
-//    public UserDto findById(Integer id) {
-//        Optional<User> byId = userRepository.findById(id);
-//        User user = byId.orElseThrow(() -> new NotFoundException(String.format(USER_NOT_FOUND, id)));
-//        return userMapper.mapEntityToDto(user);
-//    }
 
     @Override
     public void updateCompletely(Integer id, UserDto userDto) {
