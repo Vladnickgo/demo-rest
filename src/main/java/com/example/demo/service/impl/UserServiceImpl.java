@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 import static com.example.demo.exception.ExceptionMessage.FROM_DATE_MORE_THAN_TO_DATE;
 import static com.example.demo.exception.ExceptionMessage.USER_NOT_FOUND;
@@ -52,11 +51,11 @@ public class UserServiceImpl implements UserService {
         return new PageImpl<>(userDtoList, pageable, total);
     }
 
-    public UserDto findById(Integer id) {
-        Optional<User> byId = userRepository.findById(id);
-        User user = byId.orElseThrow(() -> new NotFoundException(String.format(USER_NOT_FOUND, id)));
-        return userMapper.mapEntityToDto(user);
-    }
+//    public UserDto findById(Integer id) {
+//        Optional<User> byId = userRepository.findById(id);
+//        User user = byId.orElseThrow(() -> new NotFoundException(String.format(USER_NOT_FOUND, id)));
+//        return userMapper.mapEntityToDto(user);
+//    }
 
     @Override
     public void updateCompletely(Integer id, UserDto userDto) {
